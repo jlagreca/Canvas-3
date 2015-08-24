@@ -27,10 +27,8 @@ function Get-SisImport
     
     $Url = $CanvasSession.Url
     $ApiEndpoint = "api/v1/accounts/$AccountId/sis_imports"
-    $Token = $CanvasSession.ApiToken.GetNetworkCredential().Password
     $Uri = "$Url/$ApiEndpoint"
-    $AuthHeader = @{Authorization = "Bearer $Token"}
-    $Request = Invoke-RestMethod -Uri $uri -Method Get -Headers $AuthHeader
+    $Request = Invoke-RestMethod -Uri $uri -Method Get -Headers $AuthHeader -WebSession $CanvasSession
 
     foreach ($Result in $Request.sis_imports)
     {
