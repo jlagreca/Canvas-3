@@ -1,3 +1,6 @@
+$ModuleRoot = $PSScriptRoot
+$TokensPath = "$ModuleRoot\Tokens"
+$FunctionsPath = "$ModuleRoot\Functions"
 $NameSpace = 'Canvas'
 $TypeNames = @{
 	User       = "$NameSpace.User"
@@ -10,11 +13,10 @@ $TypeNames = @{
 	Role       = "$NameSpace.Role"
 }
 
-$Scripts = Get-ChildItem -Path "$PSScriptRoot\Functions" -Filter '*.ps1' -file -Recurse
+$Scripts = Get-ChildItem -Path $FunctionsPath -Filter '*.ps1' -file -Recurse
 
 foreach ($Script in $Scripts)
 {
 	. $Script.FullName
 }
 
-$TokensPath = "$PSScriptRoot\Tokens"

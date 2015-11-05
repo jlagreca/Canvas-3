@@ -22,7 +22,7 @@ Function Save-ApiToken
         $Credential,
         
         [String]
-        $Path = "$(Split-Path $PSCommandPath -Parent)\Tokens"
+        $Path = $TokensPath
     )
     
     $FileName = "$($Credential.UserName)_$Env:ComputerName.clixml"
