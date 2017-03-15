@@ -4,11 +4,11 @@ function Get-LastPageNumber
     param
     (
         [Parameter(Mandatory=$false)]
-        [Microsoft.PowerShell.Commands.HtmlWebResponseObject]
-        $Request
+        [string]
+        $Link
     )
     
-    $LastPage = ($Request.Headers.Link -split ',' | Where-Object {$_ -like '* rel="last"'}) -split ';| |<|>' |
+    $LastPage = ($Link -split "," | Where-Object {$_ -like '* rel="last"'}) -split ";| |<|>" |
     Where-Object {$_} | Select-Object -First 1
     
     $null = $LastPage -match "page=(?'PageNumber'[0-9]+)"
