@@ -7,7 +7,8 @@
 	Description = "A PowerShell module for managing aspects of the Canvas Learning Management System using its' REST API"
 	PowerShellVersion = "5.0"
 	FunctionsToExport = @(
-		"Get-CanvasUser"
+		"Get-CanvasUser",
+		"New-CanvasConnection"
 	)
 
 	PrivateData = @{

@@ -27,7 +27,7 @@ function Invoke-CanvasRestMethod
     )
     
     $Body["per_page"] = 100
-    $Uri = "$($Url)/$ApiBase/$ApiEndpoint"
+    $Uri = "$Url/$ApiBase/$ApiEndpoint"
     $Splat = @{
         Method      = $Method
         ContentType = "application/json"
