@@ -87,7 +87,7 @@ Describe "Functions" {
 earch_term=username&page=1&per_page=100>; rel="first",<https://whatev.domain.com/api/v1/accounts/1/users?search_term=username&page=<placeholder>&per_page=100>; rel="last"'
 			$Cases = @(
 				@{Link = $Link -replace "<placeholder>", 1; Num = 1},
-				@{Link = $Link -replace "<placeholder>", 85; Num = 85}
+				@{Link = $Link -replace "<placeholder>", 84; Num = 85}
 			)
 			It "returns <num>" -TestCases $Cases {
 				param ($Link, $Num)
