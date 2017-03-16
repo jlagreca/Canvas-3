@@ -29,4 +29,4 @@ $null = New-ExternalHelp -Path $DocsPath -OutPutPath $DocsOutPutPath -Force
 
 # run tests
 $TestScript = Join-Path $PSScriptRoot "$ModuleName.tests.ps1"
-Invoke-Pester -Script $TestScript -EnableExit:$TestExit
+Invoke-Pester -Script @{Path = $TestScript; Parameters = @{DocsOutputpath = $DocsOutPutPath}} -EnableExit:$TestExit

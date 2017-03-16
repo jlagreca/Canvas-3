@@ -1,3 +1,9 @@
+param
+(
+    [string]
+    $DocsOutputPath
+)
+
 if ($env:APPVEYOR)
 {
     $ModuleName = $env:Appveyor_Project_Name
@@ -23,6 +29,12 @@ Pester\Describe 'PSScriptAnalyzer' {
             Severity    = "Warning"
         }
         Invoke-ScriptAnalyzer @AnalyzeSplat | Should be $null
+    }
+}
+
+Pester\Describe "Docs" {
+    Pester\It "help file exists" {
+        Test-Path (Join-Path $DocsOutputPath "$ModuleName-help.xml") | Should Be $true
     }
 }
 
