@@ -94,16 +94,15 @@ Pester\Describe "Manifest" {
 
 Describe "Functions" {
 	InModuleScope "Canvas" {
-		Context "Get-LastPageNumber" {
-			$Link = '<https://whatev.domain.com/api/v1/accounts/1/users?search_term=username&page=1&per_page=100>; rel="current",<https://whatev.domain.com/api/v1/accounts/1/users?s
-earch_term=username&page=1&per_page=100>; rel="first",<https://whatev.domain.com/api/v1/accounts/1/users?search_term=username&page=<placeholder>&per_page=100>; rel="last"'
+		Context "Get-NextPageNumber" {
+			$Link = '<https://whatev.domain.com/api/v1/accounts/1/users?search_term=username&page=1&per_page=100>; rel="current",<https://whatev.domain.com/api/v1/accounts/1/users?search_term=username&page=<placeholder>&per_page=100>; rel="next",<https://whatev.domain.com/api/v1/accounts/1/users?search_term=username&page=1&per_page=100>; rel="first"'
 			$Cases = @(
 				@{Link = $Link -replace "<placeholder>", 1; Num = 1},
 				@{Link = $Link -replace "<placeholder>", 85; Num = 85}
 			)
 			It "returns <num>" -TestCases $Cases {
 				param ($Link, $Num)
-				Get-LastPageNumber -Link $Link | Should Be $Num
+				Get-NextPageNumber -Link $Link | Should Be $Num
 			}
 		}
 	}

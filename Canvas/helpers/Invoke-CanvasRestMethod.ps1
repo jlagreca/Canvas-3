@@ -29,17 +29,19 @@ function Invoke-CanvasRestMethod
     $Body["per_page"] = 100
     $Uri = "$Url/$ApiBase/$ApiEndpoint"
     $Splat = @{
-        Method      = $Method
+        Uri = $Uri
+        Method = $Method
         ContentType = "application/json"
-        Headers     = @{Authorization = "Bearer $($Credential.GetNetworkCredential().Password)"}
-        Body        = $Body
+        Headers = @{Authorization = "Bearer $($Credential.GetNetworkCredential().Password)"}
+        Body = $Body
     }
     
-    $WebRequest = Invoke-WebRequest @Splat -Uri $Uri -ErrorAction Stop
-    $NumPages = Get-LastPageNumber -Link $WebRequest.Headers.Link
-
-    foreach ($Page in 1..$NumPages)
+    Do
     {
-        Invoke-RestMethod -Uri "$Uri`?page=$Page" @Splat | Foreach-Object { $_ }
+        $WebRequest = Invoke-WebRequest @Splat -ErrorAction Stop
+        $WebRequest.Content | ConvertFrom-Json | ForEach-Object { $_ }
+        $NextPage = Get-NextPageNumber -Link $WebRequest.Headers.Link
+        $Splat["Uri"] = "$Uri`?page=$NextPage"
     }
+    While ($NextPage)
 }

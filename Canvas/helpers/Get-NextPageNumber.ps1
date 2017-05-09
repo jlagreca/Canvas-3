@@ -1,4 +1,4 @@
-function Get-LastPageNumber
+function Get-NextPageNumber
 {
     [CmdletBinding()]
     param
@@ -8,9 +8,9 @@ function Get-LastPageNumber
         $Link
     )
     
-    $LastPage = ($Link -split "," | Where-Object {$_ -like '* rel="last"'}) -split ";| |<|>" |
+    $NextPage = ($Link -split "," | Where-Object {$_ -like '* rel="next"'}) -split ";| |<|>" |
     Where-Object {$_} | Select-Object -First 1
     
-    $null = $LastPage -match "page=(?'PageNumber'[0-9]+)"
+    $null = $NextPage -match "page=(?'PageNumber'[0-9]+)"
     $Matches.PageNumber
 }
