@@ -1,0 +1,252 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<helpItems xmlns="http://msh" schema="maml">
+
+<command:command xmlns:maml="http://schemas.microsoft.com/maml/2004/10" xmlns:command="http://schemas.microsoft.com/maml/dev/command/2004/10" xmlns:dev="http://schemas.microsoft.com/maml/dev/2004/10" xmlns:MSHelp="http://msdn.microsoft.com/mshelp">
+<command:details><command:name>Get-CanvasUser</command:name>
+<command:verb>Get</command:verb>
+<command:noun>CanvasUser</command:noun>
+<maml:description><maml:para>{{Fill in the Synopsis}}
+</maml:para>
+</maml:description>
+</command:details>
+<maml:description><maml:para>{{Fill in the Description}}
+</maml:para>
+</maml:description>
+<command:syntax><command:syntaxItem><maml:name>Get-CanvasUser</maml:name>
+<command:parameter required="true" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none"><maml:name>All</maml:name>
+<maml:Description><maml:para>{{Fill All Description}}
+</maml:para>
+</maml:Description>
+<dev:type><maml:name>SwitchParameter</maml:name>
+<maml:uri /></dev:type>
+<dev:defaultValue>False</dev:defaultValue>
+</command:parameter>
+<command:parameter required="true" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none"><maml:name>Connection</maml:name>
+<maml:Description><maml:para>{{Fill Connection Description}}
+</maml:para>
+</maml:Description>
+<command:parameterValue required="true" variableLength="false">Connection</command:parameterValue>
+<dev:type><maml:name>Connection</maml:name>
+<maml:uri /></dev:type>
+<dev:defaultValue>None</dev:defaultValue>
+</command:parameter>
+</command:syntaxItem>
+<command:syntaxItem><maml:name>Get-CanvasUser</maml:name>
+<command:parameter required="true" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none"><maml:name>Connection</maml:name>
+<maml:Description><maml:para>{{Fill Connection Description}}
+</maml:para>
+</maml:Description>
+<command:parameterValue required="true" variableLength="false">Connection</command:parameterValue>
+<dev:type><maml:name>Connection</maml:name>
+<maml:uri /></dev:type>
+<dev:defaultValue>None</dev:defaultValue>
+</command:parameter>
+<command:parameter required="true" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none"><maml:name>Filter</maml:name>
+<maml:Description><maml:para>{{Fill Filter Description}}
+</maml:para>
+</maml:Description>
+<command:parameterValue required="true" variableLength="false">String</command:parameterValue>
+<dev:type><maml:name>String</maml:name>
+<maml:uri /></dev:type>
+<dev:defaultValue>None</dev:defaultValue>
+</command:parameter>
+</command:syntaxItem>
+<command:syntaxItem><maml:name>Get-CanvasUser</maml:name>
+<command:parameter required="true" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none"><maml:name>Connection</maml:name>
+<maml:Description><maml:para>{{Fill Connection Description}}
+</maml:para>
+</maml:Description>
+<command:parameterValue required="true" variableLength="false">Connection</command:parameterValue>
+<dev:type><maml:name>Connection</maml:name>
+<maml:uri /></dev:type>
+<dev:defaultValue>None</dev:defaultValue>
+</command:parameter>
+<command:parameter required="true" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none"><maml:name>Identity</maml:name>
+<maml:Description><maml:para>{{Fill Identity Description}}
+</maml:para>
+</maml:Description>
+<command:parameterValue required="true" variableLength="false">Int32</command:parameterValue>
+<dev:type><maml:name>Int32</maml:name>
+<maml:uri /></dev:type>
+<dev:defaultValue>None</dev:defaultValue>
+</command:parameter>
+</command:syntaxItem>
+</command:syntax>
+<command:parameters><command:parameter required="true" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none"><maml:name>All</maml:name>
+<maml:Description><maml:para>{{Fill All Description}}
+</maml:para>
+</maml:Description>
+<command:parameterValue required="false" variableLength="false">SwitchParameter</command:parameterValue>
+<dev:type><maml:name>SwitchParameter</maml:name>
+<maml:uri /></dev:type>
+<dev:defaultValue>False</dev:defaultValue>
+</command:parameter>
+<command:parameter required="true" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none"><maml:name>Connection</maml:name>
+<maml:Description><maml:para>{{Fill Connection Description}}
+</maml:para>
+</maml:Description>
+<command:parameterValue required="true" variableLength="false">Connection</command:parameterValue>
+<dev:type><maml:name>Connection</maml:name>
+<maml:uri /></dev:type>
+<dev:defaultValue>None</dev:defaultValue>
+</command:parameter>
+<command:parameter required="true" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none"><maml:name>Filter</maml:name>
+<maml:Description><maml:para>{{Fill Filter Description}}
+</maml:para>
+</maml:Description>
+<command:parameterValue required="true" variableLength="false">String</command:parameterValue>
+<dev:type><maml:name>String</maml:name>
+<maml:uri /></dev:type>
+<dev:defaultValue>None</dev:defaultValue>
+</command:parameter>
+<command:parameter required="true" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none"><maml:name>Identity</maml:name>
+<maml:Description><maml:para>{{Fill Identity Description}}
+</maml:para>
+</maml:Description>
+<command:parameterValue required="true" variableLength="false">Int32</command:parameterValue>
+<dev:type><maml:name>Int32</maml:name>
+<maml:uri /></dev:type>
+<dev:defaultValue>None</dev:defaultValue>
+</command:parameter>
+</command:parameters>
+<command:inputTypes><command:inputType><dev:type><maml:name>None</maml:name>
+</dev:type>
+<maml:description><maml:para>
+</maml:para>
+</maml:description>
+</command:inputType>
+</command:inputTypes>
+<command:returnValues><command:returnValue><dev:type><maml:name>System.Object</maml:name>
+</dev:type>
+<maml:description><maml:para>
+</maml:para>
+</maml:description>
+</command:returnValue>
+</command:returnValues>
+<maml:alertSet><maml:alert><maml:para>
+</maml:para>
+</maml:alert>
+</maml:alertSet>
+<command:examples><command:example><maml:title>Example 1</maml:title>
+<dev:code>PS C:\&gt; {{ Add example code here }}</dev:code>
+<dev:remarks><maml:para>{{ Add example description here }}
+</maml:para>
+</dev:remarks>
+</command:example>
+</command:examples>
+<command:relatedLinks></command:relatedLinks>
+</command:command>
+<command:command xmlns:maml="http://schemas.microsoft.com/maml/2004/10" xmlns:command="http://schemas.microsoft.com/maml/dev/command/2004/10" xmlns:dev="http://schemas.microsoft.com/maml/dev/2004/10" xmlns:MSHelp="http://msdn.microsoft.com/mshelp">
+<command:details><command:name>New-CanvasConnection</command:name>
+<command:verb>New</command:verb>
+<command:noun>CanvasConnection</command:noun>
+<maml:description><maml:para>{{Fill in the Synopsis}}
+</maml:para>
+</maml:description>
+</command:details>
+<maml:description><maml:para>{{Fill in the Description}}
+</maml:para>
+</maml:description>
+<command:syntax><command:syntaxItem><maml:name>New-CanvasConnection</maml:name>
+<command:parameter required="true" variableLength="true" globbing="false" pipelineInput="False" position="0" aliases="none"><maml:name>CanvasUrl</maml:name>
+<maml:Description><maml:para>{{Fill CanvasUrl Description}}
+</maml:para>
+</maml:Description>
+<command:parameterValue required="true" variableLength="false">Uri</command:parameterValue>
+<dev:type><maml:name>Uri</maml:name>
+<maml:uri /></dev:type>
+<dev:defaultValue>None</dev:defaultValue>
+</command:parameter>
+<command:parameter required="true" variableLength="true" globbing="false" pipelineInput="False" position="1" aliases="none"><maml:name>AccountID</maml:name>
+<maml:Description><maml:para>{{Fill AccountID Description}}
+</maml:para>
+</maml:Description>
+<command:parameterValue required="true" variableLength="false">Int32</command:parameterValue>
+<dev:type><maml:name>Int32</maml:name>
+<maml:uri /></dev:type>
+<dev:defaultValue>None</dev:defaultValue>
+</command:parameter>
+<command:parameter required="true" variableLength="true" globbing="false" pipelineInput="False" position="2" aliases="none"><maml:name>Credential</maml:name>
+<maml:Description><maml:para>{{Fill Credential Description}}
+</maml:para>
+</maml:Description>
+<command:parameterValue required="true" variableLength="false">PSCredential</command:parameterValue>
+<dev:type><maml:name>PSCredential</maml:name>
+<maml:uri /></dev:type>
+<dev:defaultValue>None</dev:defaultValue>
+</command:parameter>
+<command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none"><maml:name>SetAsDefault</maml:name>
+<maml:Description><maml:para>{{Fill SetAsDefault Description}}
+</maml:para>
+</maml:Description>
+<dev:type><maml:name>SwitchParameter</maml:name>
+<maml:uri /></dev:type>
+<dev:defaultValue>False</dev:defaultValue>
+</command:parameter>
+</command:syntaxItem>
+</command:syntax>
+<command:parameters><command:parameter required="true" variableLength="true" globbing="false" pipelineInput="False" position="1" aliases="none"><maml:name>AccountID</maml:name>
+<maml:Description><maml:para>{{Fill AccountID Description}}
+</maml:para>
+</maml:Description>
+<command:parameterValue required="true" variableLength="false">Int32</command:parameterValue>
+<dev:type><maml:name>Int32</maml:name>
+<maml:uri /></dev:type>
+<dev:defaultValue>None</dev:defaultValue>
+</command:parameter>
+<command:parameter required="true" variableLength="true" globbing="false" pipelineInput="False" position="0" aliases="none"><maml:name>CanvasUrl</maml:name>
+<maml:Description><maml:para>{{Fill CanvasUrl Description}}
+</maml:para>
+</maml:Description>
+<command:parameterValue required="true" variableLength="false">Uri</command:parameterValue>
+<dev:type><maml:name>Uri</maml:name>
+<maml:uri /></dev:type>
+<dev:defaultValue>None</dev:defaultValue>
+</command:parameter>
+<command:parameter required="true" variableLength="true" globbing="false" pipelineInput="False" position="2" aliases="none"><maml:name>Credential</maml:name>
+<maml:Description><maml:para>{{Fill Credential Description}}
+</maml:para>
+</maml:Description>
+<command:parameterValue required="true" variableLength="false">PSCredential</command:parameterValue>
+<dev:type><maml:name>PSCredential</maml:name>
+<maml:uri /></dev:type>
+<dev:defaultValue>None</dev:defaultValue>
+</command:parameter>
+<command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none"><maml:name>SetAsDefault</maml:name>
+<maml:Description><maml:para>{{Fill SetAsDefault Description}}
+</maml:para>
+</maml:Description>
+<command:parameterValue required="false" variableLength="false">SwitchParameter</command:parameterValue>
+<dev:type><maml:name>SwitchParameter</maml:name>
+<maml:uri /></dev:type>
+<dev:defaultValue>False</dev:defaultValue>
+</command:parameter>
+</command:parameters>
+<command:inputTypes><command:inputType><dev:type><maml:name>None</maml:name>
+</dev:type>
+<maml:description><maml:para>
+</maml:para>
+</maml:description>
+</command:inputType>
+</command:inputTypes>
+<command:returnValues><command:returnValue><dev:type><maml:name>System.Object</maml:name>
+</dev:type>
+<maml:description><maml:para>
+</maml:para>
+</maml:description>
+</command:returnValue>
+</command:returnValues>
+<maml:alertSet><maml:alert><maml:para>
+</maml:para>
+</maml:alert>
+</maml:alertSet>
+<command:examples><command:example><maml:title>Example 1</maml:title>
+<dev:code>PS C:\&gt; {{ Add example code here }}</dev:code>
+<dev:remarks><maml:para>{{ Add example description here }}
+</maml:para>
+</dev:remarks>
+</command:example>
+</command:examples>
+<command:relatedLinks></command:relatedLinks>
+</command:command>
+</helpItems>
