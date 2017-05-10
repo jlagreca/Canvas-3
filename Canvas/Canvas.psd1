@@ -10,6 +10,7 @@
 		"Get-CanvasUser",
 		"New-CanvasConnection"
 	)
+	FormatsToProcess = "formats/User.format.ps1xml"
 
 	PrivateData = @{
         PSData = @{
