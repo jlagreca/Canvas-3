@@ -39,7 +39,7 @@ function Invoke-CanvasRestMethod
     Do
     {
         $WebRequest = Invoke-WebRequest @Splat -ErrorAction Stop
-        $WebRequest.Content | ConvertFrom-Json | ForEach-Object { $_ }
+        ($WebRequest.Content | ConvertFrom-Json)
         $NextPage = Get-NextPageNumber -Link $WebRequest.Headers.Link
         $Splat["Uri"] = "$Uri`?page=$NextPage"
     }

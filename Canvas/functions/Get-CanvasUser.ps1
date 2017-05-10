@@ -49,6 +49,6 @@ function Get-CanvasUser
             }
         }
 
-        Invoke-CanvasRestMethod @Splat | ForEach-Object { $_ -as [Canvas.User] }
+        Invoke-CanvasRestMethod @Splat | ForEach-Object { [Canvas.User]$_ }
     }
 }
