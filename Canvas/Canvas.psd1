@@ -14,7 +14,7 @@
 	PrivateData = @{
         PSData = @{
             Tags = @("Canvas","Education","K-12","REST","Learning","LMS")
-            LicenseUri = "https://github.com/mattmcnabb/Canvas/blob/master/license"
+            LicenseUri = "https://github.com/mattmcnabb/Canvas/blob/master/Canvas/Canvas/license"
             ProjectUri = "https://github.com/mattmcnabb/Canvas"
             # ReleaseNotes = ""
         }

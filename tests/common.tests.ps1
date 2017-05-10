@@ -1,8 +1,4 @@
-param
-(
-    [string]
-    $DocsOutputPath
-)
+﻿$ProjectPath = Split-Path $PSScriptRoot
 
 if ($env:APPVEYOR)
 {
@@ -11,17 +7,16 @@ if ($env:APPVEYOR)
 }
 else
 {
-    $ModuleName = Split-Path $PSScriptRoot -Leaf
+    $ModuleName = Split-Path $ProjectPath -Leaf
     $Version = "0.1.0"
 }
 
-$ModulePath = Join-Path $PSScriptRoot $ModuleName
+$ModulePath = Join-Path $ProjectPath $ModuleName
 $ManifestPath = Join-Path $ModulePath "$ModuleName.psd1"
 if (Get-Module -Name $ModuleName) { Remove-Module $ModuleName -Force }
 Import-Module $ManifestPath -Force
 
 Pester\Describe 'PSScriptAnalyzer' {
-    Import-Module -Name PSScriptAnalyzer -Force
     Pester\It "passes Invoke-ScriptAnalyzer" {
         $AnalyzeSplat = @{
             Path        = $ModulePath
@@ -34,7 +29,9 @@ Pester\Describe 'PSScriptAnalyzer' {
 
 Pester\Describe "Docs" {
     Pester\It "help file exists" {
-        Test-Path (Join-Path $DocsOutputPath "$ModuleName-help.xml") | Should Be $true
+        $DocsPath = Join-Path $ModulePath "en-US"
+        $Doc = Join-Path $DocsPath "$ModuleName-help.xml"
+        Test-Path $Doc | Should Be $true
     }
 }
 
@@ -77,7 +74,7 @@ Pester\Describe "Manifest" {
     }
     
     Pester\It 'has a valid license Uri' {
-        $ManifestHash.PrivateData.Values.LicenseUri | Should Be "https://github.com/mattmcnabb/Canvas/blob/master/license"
+        $ManifestHash.PrivateData.Values.LicenseUri | Should Be "https://github.com/mattmcnabb/Canvas/blob/master/Canvas/Canvas/license"
     }
     
     Pester\It 'has a valid project Uri' {
@@ -92,18 +89,3 @@ Pester\Describe "Manifest" {
     }
 }
 
-Describe "Functions" {
-	InModuleScope "Canvas" {
-		Context "Get-NextPageNumber" {
-			$Link = '<https://whatev.domain.com/api/v1/accounts/1/users?search_term=username&page=1&per_page=100>; rel="current",<https://whatev.domain.com/api/v1/accounts/1/users?search_term=username&page=<placeholder>&per_page=100>; rel="next",<https://whatev.domain.com/api/v1/accounts/1/users?search_term=username&page=1&per_page=100>; rel="first"'
-			$Cases = @(
-				@{Link = $Link -replace "<placeholder>", 1; Num = 1},
-				@{Link = $Link -replace "<placeholder>", 85; Num = 85}
-			)
-			It "returns <num>" -TestCases $Cases {
-				param ($Link, $Num)
-				Get-NextPageNumber -Link $Link | Should Be $Num
-			}
-		}
-	}
-}
